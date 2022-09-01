@@ -38,21 +38,3 @@ jobs:
         with:
           name: Build-${{ matrix.targetPlatform }}
           path: build/${{ matrix.targetPlatform }}
-  createUnityPackage:
-      runs-on: ubuntu-latest
-      steps:
-      - uses: actions/checkout@v2
-      - run: |
-          echo "Assets/ExtendedUnityEditor.meta" > ExtendedUnityEditor
-          find Assets/ExtendedUnityEditor/ -name \*.meta >> ExtendedUnityEditor
-
-      - run: mkdir output
-
-      - uses: pCYSl5EDgo/create-unitypackage@master
-        with:
-          package-path: 'output/extended-unity-editor.unitypackage'
-          include-files: ExtendedUnityEditor
-      - uses: actions/upload-artifact@master
-        with:
-          path: output
-          name: package
