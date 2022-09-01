@@ -20,7 +20,3 @@ jobs:
         with:
           path: output
           name: extended-unity-editor
-      - uses: actions/upload-artifact@v2
-        with: 
-          name: extended-unity-package
-          path: output
