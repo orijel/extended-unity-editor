@@ -26,6 +26,6 @@ jobs:
       - name: Release with Notes
         uses: softprops/action-gh-release@v1
         with:
-          files: extended-unity-editor
+          files: output/extended-unity-editor.unitypackage
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
