@@ -22,3 +22,9 @@ jobs:
         with:
           path: output
           name: extended-unity-editor
+      - name: Release with Notes
+        uses: softprops/action-gh-release@v1
+        with:
+          files: output/extended-unity-editor
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
