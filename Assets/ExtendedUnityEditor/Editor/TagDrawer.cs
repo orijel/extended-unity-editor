@@ -9,7 +9,11 @@ namespace Assets.ExtendedUnityEditor.Editor
     {
         public override void OnGUI(Rect position, SerializedProperty property, GUIContent label)
         {
-            var tagAttribute = (TagAttribute)base.attribute;
+            if (property.propertyType != SerializedPropertyType.String)
+            {
+                EditorGUI.LabelField(position, property.displayName, "Use Tag with string.");
+                return;
+            }
 
             var value = EditorGUI.TagField(position, property.displayName, property.stringValue);
             property.stringValue = value;
