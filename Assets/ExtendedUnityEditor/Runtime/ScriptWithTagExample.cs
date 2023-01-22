@@ -6,6 +6,7 @@ namespace Assets.ExtendedUnityEditor.Runtime
     {
         public Tag MyCoolTag;
         [SerializeField, Tag] private string _tagAsAttribute;
+        [SerializeField, Tag] private float _tagError;
 
         // Start is called before the first frame update
         void Start()

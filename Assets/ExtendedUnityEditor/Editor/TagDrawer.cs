@@ -11,7 +11,7 @@ namespace Assets.ExtendedUnityEditor.Editor
         {
             if (property.propertyType != SerializedPropertyType.String)
             {
-                EditorGUI.LabelField(position, property.displayName, "Use Tag with string.");
+                EditorGUI.LabelField(position, property.displayName, "Tag attribute must be used with string type.");
                 return;
             }
 
